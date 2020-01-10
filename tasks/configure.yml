@@ -1,0 +1,7 @@
+---
+- name: configre htttpd
+  copy: src=files/httpd.conf dest=/etc/httpd/conf/httpd.conf
+- name: Copy the Index.html File
+  copy: src=files/index.html dest=/var/www/html
+  notify:
+  - restart: apache
